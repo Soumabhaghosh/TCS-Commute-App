@@ -1,0 +1,142 @@
+/* CreateAccount.css */
+.create-account-container {
+    width: 400px; /* Adjust as needed */
+    margin: 0 auto;
+    overflow: hidden; /* Important for sliding effect */
+  }
+  
+  .slider-container {
+    display: flex;
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+  }
+  
+  .page {
+    width: 100%; /* Each page takes full width */
+    flex-shrink: 0; /* Prevent pages from shrinking */
+    padding: 20px;
+    box-sizing: border-box; /* Include padding in width */
+    border: 1px solid #ccc;
+  }
+  
+  .navigation-buttons {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+  }
+  
+  /* Add more styling as needed */
+
+  /* RegistrationForm.css */
+.registration-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.registration-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+}
+
+/* ... (rest of the CSS from the previous HTML example) */
+
+h1 {
+    color: #28a745; /* Green color */
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+h2 {
+    color: #28a745;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+p {
+    color: #6c757d; /* Darker gray for the "Thank you" message */
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #495057;
+    text-align: left;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: calc(100% - 20px);
+    
+    margin-bottom: 15px;
+    margin-left: -22px;
+    border: 1px solid #ced4da; /* Light gray border */
+    border-radius: 6px; /* Slightly more rounded corners */
+    box-sizing: border-box;
+    font-size: 16px;
+    
+}
+input::placeholder{
+    color: #adb5bd;
+    text-align: left;
+}
+.password-requirements {
+    font-size: 12px;
+    color: #6c757d;
+    margin-bottom: 20px;
+    text-align: left;
+}
+.button-container{
+    display: flex;
+    justify-content: flex-end;
+}
+button {
+    padding: 12px 24px;
+    background-color: #28a745; /* Green */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.form-group {
+    display: flex;
+    gap: 20px; /* Space between columns */
+    margin-bottom: 20px;
+}
+
+.form-group > div {
+    flex: 1; /* Equal width columns */
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #495057;
+}
+select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+    appearance: none; /* Remove default select arrow */
+    background-color: white;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e"); /* Custom arrow */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 16px 16px;
+    padding-right: 30px; /* Adjust padding for arrow */
+    margin-left: -22px;
+}
+
+
+
