@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import './App.css'
 import {BrowserRouter,Routes, Route, Router } from "react-router-dom"
@@ -7,10 +7,14 @@ import LoginPage from "./components/LoginPage";
 import CreateAccount from './components/CreateAccount';
 
 const App = () => {
+  const [loggedIn,setLoggedIn]=useState(false); //here we have to check if token is available in localstorage or not
+  const login = () =>{
+      setLoggedIn(true)
+  }
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<LoginPage/>}/>
+        <Route path='/'  element={loggedIn?<>LoggedIn</>:<LoginPage login={login}/>}/>
         <Route path='/create-account' element={<CreateAccount/>}/>
       </Routes>
     </BrowserRouter>

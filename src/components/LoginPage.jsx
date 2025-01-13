@@ -2,13 +2,15 @@ import React, { useState } from "react";
 import "../styles/LoginPage.css";
 import { Link } from "react-router-dom";
 
-const LoginPage = () => {
+const LoginPage = (props) => {
   const [name,setName] = useState("");
   const [pass,setPass] = useState("");
   const [check,setCheck] = useState(false);
   function handelSubmit(e) {
     e.preventDefault()
     console.log(name,pass,check) //server part
+    props.login()
+    
       
   }
 

@@ -53,7 +53,7 @@ const CreateAccount = () => {
                 <div>
                     <h2>Global presence</h2>
 
-                    <div class="form-group">
+                    <div className="form-group">
                         <div>
                             <label htmlFor="geography">Geography</label>
                             <select id="geography" name="geography" value={formData.geography}  onChange={handleChange}>
@@ -72,7 +72,7 @@ const CreateAccount = () => {
                         </div>
                     </div>
 
-                    <div class="form-group">
+                    <div className="form-group">
                         <div>
                             <label htmlFor="officeCity">TCS office city</label>
                             <input type="text" id="officeCity" placeholder="Type here eg, Pune" name="officeCity" value={formData.officeCity} onChange={handleChange}/>
@@ -87,15 +87,15 @@ const CreateAccount = () => {
 
                     <h2>Account and project details</h2>
 
-                    <div class="form-group">
+                    <div className="form-group">
                         <div>
-                            <label for="accountName">TCS Account name</label>
+                            <label htmlFor="accountName">TCS Account name</label>
                             <select id="accountName" name="accountName" value={formData.value} onChange={handleChange}>
                                 <option value="Utilities">Utilities</option>
                             </select>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div className="form-group">
                         <div>
                             <label htmlFor="projectName">TCS Project name</label>
                             <select id="projectName" name="projectName" value={formData.projectName} onChange={handleChange}>
