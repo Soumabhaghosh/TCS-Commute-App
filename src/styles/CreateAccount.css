@@ -1,13 +1,16 @@
 /* CreateAccount.css */
 .create-account-container {
-    width: 400px; /* Adjust as needed */
+    width:70%;
     margin: 0 auto;
-    overflow: hidden; /* Important for sliding effect */
+    overflow: hidden; 
+    box-shadow: #076fd6;
+    
   }
   
   .slider-container {
     display: flex;
     transition: transform 0.3s ease-in-out; /* Smooth transition */
+    
   }
   
   .page {
@@ -17,6 +20,8 @@
     box-sizing: border-box; /* Include padding in width */
     border: 1px solid #ccc;
     text-align: left;
+    border-radius: 8px;
+    
   }
   
   .navigation-buttons {
@@ -74,9 +79,9 @@ label {
 
 input[type="text"],
 input[type="password"] {
-    width: calc(100% - 20px);
+    width: 100%;
     
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     /* margin-left: -22px; */
     border: 1px solid #ced4da; /* Light gray border */
     border-radius: 6px; /* Slightly more rounded corners */

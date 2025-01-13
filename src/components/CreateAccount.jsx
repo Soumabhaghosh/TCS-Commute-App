@@ -3,23 +3,21 @@ import '../styles/CreateAccount.css'; // Import your CSS
 
 const CreateAccount = () => {
     const [currentPage, setCurrentPage] = useState(0);
-    const [formData, setFormData] = useState({
-        name: '',
-        employeeId: '',
-        newPassword: '',
-        repeatPassword: '',
-    });
-
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Handle form submission here (e.g., send data to server)
-        console.log(formData);
-        alert("Form submitted successfully")
-    };
+   const [formData,setFormData]= useState({
+    name:'',
+    employeeId:'',
+    newPassword:'',
+    repeatPassword:'',
+    geography:'',
+    operatingCountry:'',
+    officeCity:'',
+    baseLocation:'',
+    accountName:'',
+    projectName:'',
+  })
+  const handleChange = (e)=>{
+    setFormData(prev => ({...prev,[e.target.name]:e.target.value}))
+  }
 
     const pages = [
         {
@@ -32,15 +30,19 @@ const CreateAccount = () => {
 
                     <h2>Basic details</h2>
                     <label htmlFor="name">Enter your name please</label>
-                    <input type="text" id="name" placeholder="Click here & type" />
+                    <input type="text" id="name" placeholder="Click here & type" name="name" value={formData.name} onChange={handleChange}/>
+
                     <label htmlFor="employeeId">Employee ID</label>
-                    <input type="text" id="employeeId" placeholder="Click here & type" />
+                    <input type="text" id="employeeId" name="employeeId" placeholder="Click here & type" value={formData.employeeId} onChange={handleChange}/>
                     <h2>Set your password</h2>
+
                     <label htmlFor="newPassword">New password</label>
-                    <input type="password" id="newPassword" placeholder="Click here & type" />
+                    <input type="password" id="newPassword" name="newPassword" placeholder="Click here & type" value={formData.newPassword} onChange={handleChange}/>
+        
                     <div className="password-requirements">At least 8 characters and 2 numbers</div>
+
                     <label htmlFor="repeatPassword">Repeat new password</label>
-                    <input type="password" id="repeatPassword" placeholder="Click here & type" />
+                    <input type="password" id="repeatPassword" placeholder="Click here & type" name="repeatPassword" value={formData.repeatPassword} onChange={handleChange}/>
 
                 </div>
             ),
@@ -53,32 +55,32 @@ const CreateAccount = () => {
 
                     <div class="form-group">
                         <div>
-                            <label for="geography">Geography</label>
-                            <select id="geography">
-                                <option>Europe</option>
-                                <option>Asia</option>
-                                <option>North America</option>
+                            <label htmlFor="geography">Geography</label>
+                            <select id="geography" name="geography" value={formData.geography}  onChange={handleChange}>
+                                <option value="Europe">Europe</option>
+                                <option value="Asia">Asia</option>
+                                <option value="North America">North America</option>
                             </select>
                         </div>
                         <div>
-                            <label for="operatingCountry">Operating country</label>
-                            <select id="operatingCountry">
-                                <option>Australia</option>
-                                <option>USA</option>
-                                <option>India</option>
+                            <label htmlFor="operatingCountry">Operating country</label>
+                            <select id="operatingCountry" name="operatingCountry" value={formData.operatingCountry} onChange={handleChange}>
+                                <option value="Austrelia">Australia</option>
+                                <option value="USA">USA</option>
+                                <option value="India">India</option>
                             </select>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div>
-                            <label for="officeCity">TCS office city</label>
-                            <input type="text" id="officeCity" placeholder="Type here eg, Pune" />
+                            <label htmlFor="officeCity">TCS office city</label>
+                            <input type="text" id="officeCity" placeholder="Type here eg, Pune" name="officeCity" value={formData.officeCity} onChange={handleChange}/>
                         </div>
                         <div>
-                            <label for="baseLocation">Base location</label>
-                            <select id="baseLocation">
-                                <option>Select</option>
+                            <label htmlFor="baseLocation">Base location</label>
+                            <select id="baseLocation" name="baseLocation" value={formData.baseLocation} onChange={handleChange}>
+                                <option value="Kolkata">Kolkata</option>
                             </select>
                         </div>
                     </div>
@@ -88,16 +90,16 @@ const CreateAccount = () => {
                     <div class="form-group">
                         <div>
                             <label for="accountName">TCS Account name</label>
-                            <select id="accountName">
-                                <option>Select</option>
+                            <select id="accountName" name="accountName" value={formData.value} onChange={handleChange}>
+                                <option value="Utilities">Utilities</option>
                             </select>
                         </div>
                     </div>
                     <div class="form-group">
                         <div>
-                            <label for="projectName">TCS Project name</label>
-                            <select id="projectName">
-                                <option>Select</option>
+                            <label htmlFor="projectName">TCS Project name</label>
+                            <select id="projectName" name="projectName" value={formData.projectName} onChange={handleChange}>
+                                <option value="Engie SA">Engie SA</option>
                             </select>
                         </div>
                     </div>
@@ -117,9 +119,20 @@ const CreateAccount = () => {
     ];
 
     const handleNext = () => {
+        
+            if(currentPage==2){
+                console.log(formData);
+                
+            }
+            
+           
+            
+        
         if (currentPage < pages.length - 1) {
             setCurrentPage(currentPage + 1);
         }
+        
+        
     };
 
     const handlePrevious = () => {
@@ -140,10 +153,10 @@ const CreateAccount = () => {
             </div>
             <div className="navigation-buttons">
                 <button onClick={handlePrevious} disabled={currentPage === 0}>
-                    Previous
+                    Back
                 </button>
-                <button onClick={handleNext} disabled={currentPage === pages.length - 1}>
-                    Next
+                <button onClick={handleNext} >
+                {(currentPage==1)&&<>Proceed</>}  {(currentPage==0)&&<>Confirm</>} {(currentPage==2)&&<>Calculate</>}
                 </button>
             </div>
         </div>
