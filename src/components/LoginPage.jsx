@@ -44,7 +44,7 @@ const LoginPage = () => {
           <div className="options">
             <div>
               <input type="checkbox" id="remember" name="checkbox" value={check} onChange={ e => setCheck(!check)} />
-              <label htmlFor="remember">Remember me</label>
+              <label id="remember-me" htmlFor="remember">Remember me</label>
             </div>
             <a href="#">Forgot password?</a>
           </div>

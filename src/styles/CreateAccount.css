@@ -16,6 +16,7 @@
     padding: 20px;
     box-sizing: border-box; /* Include padding in width */
     border: 1px solid #ccc;
+    text-align: left;
   }
   
   .navigation-buttons {
@@ -76,7 +77,7 @@ input[type="password"] {
     width: calc(100% - 20px);
     
     margin-bottom: 15px;
-    margin-left: -22px;
+    /* margin-left: -22px; */
     border: 1px solid #ced4da; /* Light gray border */
     border-radius: 6px; /* Slightly more rounded corners */
     box-sizing: border-box;
@@ -116,11 +117,7 @@ button {
 .form-group > div {
     flex: 1; /* Equal width columns */
 }
-label {
-    display: block;
-    margin-bottom: 5px;
-    color: #495057;
-}
+
 select {
     width: calc(100% - 20px);
     padding: 10px;
@@ -135,7 +132,15 @@ select {
     background-position: right 10px center;
     background-size: 16px 16px;
     padding-right: 30px; /* Adjust padding for arrow */
-    margin-left: -22px;
+    
+}
+
+#newsletter{
+    margin-right: 10px;
+    
+  }
+#news-letter{
+    display:inline
 }
 
 

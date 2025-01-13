@@ -119,5 +119,9 @@
   }
   #remember{
     margin-right: 10px;
+    
   }
-  
+  #remember-me{
+    display:inline
+  }
+

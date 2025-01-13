@@ -110,7 +110,7 @@ const CreateAccount = () => {
             content: (
                 <div>
                     <input type="checkbox" id="newsletter" />
-                    <label htmlFor="newsletter">Subscribe to newsletter</label>
+                    <label id="news-letter" htmlFor="newsletter">Subscribe to newsletter</label>
                 </div>
             ),
         },
