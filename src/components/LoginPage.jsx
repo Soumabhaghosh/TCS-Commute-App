@@ -1,17 +1,31 @@
 import React, { useState } from "react";
 import "../styles/LoginPage.css";
 import { Link } from "react-router-dom";
+import { Button} from "@chakra-ui/react";
+import axios from "axios";
 
 const LoginPage = (props) => {
-  const [name,setName] = useState("");
-  const [pass,setPass] = useState("");
-  const [check,setCheck] = useState(false);
-  function handelSubmit(e) {
+  const [name, setName] = useState("");
+  const [pass, setPass] = useState("");
+  const [check, setCheck] = useState(false);
+  const [isLoading,setIsLoading]= useState(false)
+  async function handelSubmit(e) {
     e.preventDefault()
-    console.log(name,pass,check) //server part
-    props.login()
-    
+    setIsLoading(true)
+    try {
+      const response = await axios.get("https://api.zippopotam.us/us/33160")
+      if(response){
+        console.log(response.data);
+        props.login()
+      }
+    } catch (error) {
       
+    }
+    
+    
+   
+
+
   }
 
   return (
@@ -36,7 +50,7 @@ const LoginPage = (props) => {
           <input
             type="password"
             id="password"
-            placeholder="Type here"
+            placeholder="Type here"         
             name="password"
             value={pass}
             onChange={e => setPass(e.target.value)}
@@ -45,14 +59,18 @@ const LoginPage = (props) => {
 
           <div className="options">
             <div>
-              <input type="checkbox" id="remember" name="checkbox" value={check} onChange={ e => setCheck(!check)} />
+              <input type="checkbox" id="remember" name="checkbox" value={check} onChange={e => setCheck(!check)} />
               <label id="remember-me" htmlFor="remember">Remember me</label>
             </div>
             <a href="#">Forgot password?</a>
           </div>
 
-          <button type="submit">Log in</button>
+          
+          
+          <Button type="submit" loading={isLoading} variant="solid" colorPalette="green">Login</Button>
         </form>
+
+
         <p className="register">
           Don’t have an account? <Link to="/create-account">Create your account here</Link>
         </p>

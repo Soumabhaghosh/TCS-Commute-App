@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import '../styles/CreateAccount.css'; // Import your CSS
+import { Link } from 'react-router-dom';
+import { Button } from '@chakra-ui/react';
 
 const CreateAccount = () => {
     const [currentPage, setCurrentPage] = useState(0);
@@ -43,7 +45,7 @@ const CreateAccount = () => {
 
                     <label htmlFor="repeatPassword">Repeat new password</label>
                     <input type="password" id="repeatPassword" placeholder="Click here & type" name="repeatPassword" value={formData.repeatPassword} onChange={handleChange}/>
-
+                    
                 </div>
             ),
         },
@@ -152,12 +154,11 @@ const CreateAccount = () => {
                 ))}
             </div>
             <div className="navigation-buttons">
-                <button onClick={handlePrevious} disabled={currentPage === 0}>
-                    Back
-                </button>
-                <button onClick={handleNext} >
+                {(currentPage==0)?<Link to='/'><Button onClick={handlePrevious} variant="solid" colorPalette="green" size="md" p={3}> Back </Button></ Link>:<Button onClick={handlePrevious} variant="solid" colorPalette="green" size="md" p={3}> Back </Button>}
+                
+                <Button onClick={handleNext} variant="solid" colorPalette="green" size="md" p={3}>
                 {(currentPage==1)&&<>Proceed</>}  {(currentPage==0)&&<>Confirm</>} {(currentPage==2)&&<>Calculate</>}
-                </button>
+                </Button>
             </div>
         </div>
     );

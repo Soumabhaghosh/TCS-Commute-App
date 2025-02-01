@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "@chakra-ui/react": ["./node_modules/@chakra-ui/react"]
+      },
+      "jsx": "react-jsx"
+    },
+    "include": ["src/**/*"]
+  }

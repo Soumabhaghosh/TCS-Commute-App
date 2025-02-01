@@ -88,7 +88,7 @@
     color: #007bff;
   }
   
-  button {
+  /* button {
     padding: 10px;
     font-size: 16px;
     background-color: #2a5d26;
@@ -101,7 +101,7 @@
   
   button:hover {
     background-color: #1f441e;
-  }
+  } */
   
   .register {
     margin-top: 20px;
